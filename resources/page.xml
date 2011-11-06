@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<bblog>
+
+<page>
+<tag>#dronix</tag>
+<content>
+<![CDATA[
+<script type="text/javascript" src="data/dronix.js"></script>
+
+
+
+]]>
+</content>
+</page>
+
+<page>
+<tag>#aboutme</tag>
+<content>
+<![CDATA[<h3>AboutMe</h3><br><br><br><img src="image/me.png" style="margin-right: 10px;" hspace="25" align="left">]]>
+Nato il 5 Maggio 1985 a Benevento...
+
+
+<![CDATA[<h3>Work</h3>]]>
+Grazie alla pubblicazione e alla realizzazione di diversi progetti Open Source,
+sono stato contattato da un'importante azienda  e ora lavoro come
+Firmware Engeenering per dispositivi LinuX Embedded.
+
+<![CDATA[<br><br><br><br><br><h3>Skills</h3>]]>
+Programmazione:
+<![CDATA[
+<ul>
+<li>---> Linguaggio C
+<li>---> Bash Scripting
+<li>---> JavaScript
+
+<li>---> Java
+<li>---> Html/CSS
+<li>---> Linguaggio C per microcontrollori
+<li>---> Pascal
+<li>---> XUL
+</ul>
+Altro:
+<ul>
+<li>Amministratore di Sistemi GNU/Linux.
+<li>Modifica e compilazione di firmware per sistemi embedded basati su GNU/Linux
+<li>Crosscompilazioni di applicativi per sistemi embedded (mips/arm) GNU/Linux
+<li>Compilazione di versioni personalizzate del Firmware OpenWrt
+<li>Progettazione Software
+<li>Progettazioni di piccoli circuiti digitali
+<li>Grande "manualita`" per quanto riguarda costruzione di circuiti e modding di qualsiasi apparato
+</ul>
+<h3>Contact Me</h3>
+
+Potete contattarmi nei seguenti modi:
+<ul>
+<li>e-mail: stefanoviola85[at]gmail[dot]com
+<li>IRC:    irc.azzurra.org #hacklabproject 
+</ul>
+]]>
+</content>
+</page>
+
+<page>
+<tag></tag>
+<content></content>
+</page>
+
+</bblog>
+

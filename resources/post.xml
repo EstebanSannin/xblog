@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+ <!-- 
+ 
+     & - &amp;
+    < - &lt;
+    > - &gt;
+    " - &quot;
+    ' - &#39; 
+ 	
+	<post>
+          <title></title>
+          <date></date>
+          <author></author>
+          <content></content>
+        </post>
+ 
+ -->
+<bblog>
+        
+        <post>
+	  <title>New Hosting</title>
+	  <date>[03 NOV 2011 - 23.50]</date>
+	  <author>estebanSannin</author>
+	  <content>
+	    Finalmente il mio primo Virtual Server!
+	    Su questo sito cerchero' di tenere in ordine tutti i miei progetti.
+	    Al momento sono ancora in alto mare, ma presto iniziero' il trasferimento di sorgenti e binari.
+ 	    In questo momento mi ritrovo ancora a dover finire di sistemare il CMS aggiungendo le minime
+	    funzionalita' per una gestione comoda e sicura.
+	  </content>
+	</post>
+
+	<post>
+	  <title>Primo Post XBLOG</title>
+	  <date>[01 NOV 2011 - 21.54]</date>
+	  <author>estebanSannin</author>
+	  <content>
+	    Questo e' il primo post di esempio
+	    del nuovo progetto chiamato XBLOG. Un piccolo CMS scritto in JS gestito completamente attraverso file XML.
+	    Non c'e' bisogno di nessun linguaggio di backend come PHP, Perl, ruby o altro ed e' adatto ai
+	    sistemi embeddedd dove le capacita' di calcolo sono limitate..  <![CDATA[ <a href="http://google.com"> pippo </a> Today I went to the </b>beach<b>]]>
+	  </content>
+        </post>
+
+<!--	<post>
+	  <title></title>
+	  <date></date>
+	  <author></author>
+	  <content>
+	  </content>
+        </post>
+-->
+</bblog>

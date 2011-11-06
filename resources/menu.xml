@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<bblog>
+        
+        <menu>
+	  <id>home</id>
+	  <title>home</title>
+	  <url>index.html</url>
+        </menu>
+
+	<menu>
+	  <id>dronix</id>
+	  <title>dronix</title>
+	  <url>#dronix</url>
+        </menu>
+	
+	<menu>
+	  <id>aboutme</id>
+	  <title>aboutMe</title>
+	  <url>#aboutme</url>
+        </menu>
+	
+	<menu>
+	  <title></title>
+	  <url></url>
+	</menu>
+	
+       <menu>
+	  <title></title>
+	  <url></url>
+       </menu>
+
+</bblog>
+

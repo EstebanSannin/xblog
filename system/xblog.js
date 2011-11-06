@@ -1,21 +1,21 @@
 /*
-*
-*
-*
-*
-*
-*
-*
-*/
+ *
+ *    NAME: XBLOG
+ * VERSION: 0.1.0
+ *  AUTHOR: Stefano Viola (estebanSannin)
+ * 
+ *
+ *
+ */
 
 $(document).ready(function(){
 
   if($.browser.msie==true){
-  alert("IE Browser in not supported!");
-  $('#content').html("This site is not supported by Internet Explorer.<br>Install a browser actual: Firefox, Opera or Chrome.");
-  return false;
-
-}
+    alert("IE Browser in not supported!");
+    $('#content').html("This site is not supported by Internet Explorer.<br>Install a browser actual: Firefox, Opera or Chrome.");
+    return false;
+  }
+  $("<h3>Blog Post:</h3>").appendTo('#postBlog');
   var i = 0;
   $.ajax({ type: "GET", url: "resources/post.xml", dataType: "xml",
      

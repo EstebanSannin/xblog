@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <bblog>
   
-  <page>
-    <tag>dronix</tag>
-    <content>
-    <![CDATA[<script type="text/javascript" src="data/dronix.js">
-    </script>]]>
-  </content>
+<page>
+	<tag>advancedPage</tag>
+	<content>
+		<![CDATA[<script type="text/javascript" src="data/dronix.js">
+		</script>]]>
+	</content>
 </page>
 
- <page>
-   <tag>aboutme</tag>
-   <content>
-   <![CDATA[<h3>AboutMe</h3>]]>
-	 
-       </content>
-     </page>
-     
+<page>
+	<tag>basicpage</tag>
+	<content>
+		TEST PAGE
+	</content>
+</page>
 <!--
 
 This is a page object.

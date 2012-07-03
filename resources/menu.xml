@@ -20,6 +20,12 @@
 </menu>
 
 <menu>
+	<title>external-link</title>
+	<url>http://google.com</url>
+</menu>
+
+<menu>
+	<id></id>
 	<title></title>
 	<url></url>
 </menu>

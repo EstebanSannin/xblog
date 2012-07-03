@@ -22,7 +22,7 @@ $(document).ready(function(){
 	     
 	   });
 	 },
-	 error: function() { alert("error"); }
+	 error: function() { alert("PAGE Generetor: ERROR!"); }
   });
 });
 

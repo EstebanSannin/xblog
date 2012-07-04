@@ -3,15 +3,17 @@
 	font-family: mono, fixed;
 }
 
+
 body  {
-	margin : 0;
-	padding : 0 0 30px 0;
+	/*margin : 0;
+	padding : 0 0 30px 0;*/
 	background-color : black;
-	color : #888;
+/*	color : #888;
 	background-image: url(none);
 	background-position: center center;
-
+*/
 }
+
 
 div#footer  {
 	position : absolute;
@@ -201,13 +203,16 @@ div#topbar
 	
 }
 
+
 ul {
 	list-style: none;
 	padding : 10px;
 	margin-left: 0;
+	margin-top: 10;
 }
-
+/*
 li:before {
 	list-style: none;
 	content: "\00BB \0020";
 }
+*/

@@ -19,15 +19,55 @@
 <bblog>
 
 <post>
-	<title>New Hosting</title>
+	<title>Loren Ipsum 1</title>
 	<date>[03 NOV 2011 - 23.50]</date>
 	<author>estebanSannin</author>
+	<markup>MARKDOWN</markup>
 	<content>
-		Finalmente il mio primo Virtual Server!
-		Su questo sito cerchero' di tenere in ordine tutti i miei progetti.
-		Al momento sono ancora in alto mare, ma presto iniziero' il trasferimento di sorgenti e binari.
-		In questo momento mi ritrovo ancora a dover finire di sistemare il CMS aggiungendo le minime
-		funzionalita' per una gestione comoda e sicura.
+<![CDATA[
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet volutpat vestibulum. Donec non mi sit amet quam feugiat porta congue eget quam. Mauris euismod rutrum lorem ut interdum. Cras consequat nisl at sollicitudin aliquam. Aliquam vel augue aliquam, luctus urna sit amet, posuere libero. Integer quis tortor sit amet sem varius scelerisque in sit amet ipsum. Mauris condimentum, neque ut dignissim aliquam, risus felis egestas nisl, vitae feugiat leo sem non sem. Aliquam rutrum porta cursus. Pellentesque accumsan ornare massa, eget posuere felis posuere id. Curabitur luctus velit ut ligula pellentesque elementum. Duis ornare tortor mollis, suscipit est id, suscipit ante. Vivamus sit amet elit leo.
+
+
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse at semper arcu. Proin vehicula placerat tincidunt. Pellentesque non eleifend tortor. Suspendisse faucibus vel risus et feugiat. Donec venenatis sapien laoreet, pellentesque enim quis, congue lacus. Etiam odio mauris, tincidunt quis arcu ut, feugiat gravida tortor. Pellentesque interdum leo in ornare ullamcorper.
+
+
+Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tincidunt dapibus accumsan. Donec sollicitudin molestie efficitur. In id rhoncus eros, pulvinar laoreet massa. Aliquam facilisis justo tempor tellus lobortis, vel varius dolor consectetur. Aenean vitae turpis ac augue fermentum porta. Vestibulum a libero accumsan, dapibus odio quis, tincidunt magna. Cras vulputate nulla libero, id vulputate ex eleifend vitae. Suspendisse aliquam sapien sed nunc iaculis, non bibendum leo scelerisque. Aenean dignissim, neque quis hendrerit bibendum, tellus arcu aliquam eros, id efficitur risus augue at libero. Fusce cursus orci non condimentum commodo. Suspendisse efficitur diam nec mauris volutpat, sed elementum orci aliquet. Aliquam at diam et sem sodales aliquet eget sit amet eros. Phasellus eleifend a justo eu pulvinar.
+
+Praesent mollis nec nunc venenatis interdum. Donec rutrum ligula felis, sit amet viverra leo posuere id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis in consequat enim. Phasellus sed ligula velit. Donec fringilla leo ac odio fringilla, condimentum hendrerit sem luctus. Fusce eleifend malesuada nibh et dictum. Pellentesque ut suscipit erat. Nunc libero purus, blandit ut ex vitae, molestie hendrerit neque. Cras ultrices metus quam, et lacinia turpis fringilla vitae. Morbi ultrices ornare erat, ut dictum nibh tempus non. Proin libero lacus, aliquam sed tortor in, eleifend pharetra elit.
+
+Pellentesque blandit libero ipsum, eu dapibus orci blandit at. Aenean in purus diam. Donec volutpat vulputate urna nec eleifend. Donec arcu mauris, accumsan semper quam id, varius vehicula nisi. Suspendisse a ullamcorper ex. Nulla sodales mollis ornare. Fusce varius tortor vitae mauris imperdiet, id fringilla ipsum vestibulum. Nunc vel ipsum at tellus lacinia blandit id eget eros. Sed vel felis eu tortor sollicitudin feugiat. Nam pretium urna sed neque ornare tincidunt. In ipsum massa, semper at dui eget, laoreet pretium lacus. Phasellus dictum non lorem eu gravida. Vestibulum nulla sapien, auctor eget velit sed, egestas luctus arcu.
+
+### Javascript code examples
+
+```javascript
+var converter = new showdown.Converter(),
+	text      = content_post,
+	html      = converter.makeHtml(text);
+	console.log("MARKDOWN RESULT: " + html);
+```
+
+### C code example
+
+```C
+#include <stdio.h>
+int main()
+{
+	int integerType;
+	float floatType;
+	double doubleType;
+	char charType;
+
+	// Sizeof operator is used to evaluate the size of a variable
+	printf("Size of int: %ld bytes\n",sizeof(integerType));
+	printf("Size of float: %ld bytes\n",sizeof(floatType));
+	printf("Size of double: %ld bytes\n",sizeof(doubleType));
+	printf("Size of char: %ld byte\n",sizeof(charType));
+
+	return 0;
+}
+```
+]]>
 	</content>
 </post>
 
@@ -35,11 +75,17 @@
 	<title>Primo Post XBLOG</title>
 	<date>[01 NOV 2011 - 21.54]</date>
 	<author>estebanSannin</author>
+	<markup>HTML</markup>
 	<content>
 		Questo e' il primo post di esempio
 		del nuovo progetto chiamato XBLOG. Un piccolo CMS scritto in JS gestito completamente attraverso file XML.
 		Non c'e' bisogno di nessun linguaggio di backend come PHP, Perl, ruby o altro ed e' adatto ai
-		sistemi embeddedd dove le capacita' di calcolo sono limitate..  <![CDATA[ <a href="http://google.com"> pippo </a> Today I went to the </b>beach<b>]]>
+		sistemi embeddedd dove le capacita' di calcolo sono limitate..  <![CDATA[ <a href="http://google.com"> pippo </a> Today I went to the <b>beach</b>]]>
+<![CDATA[ <pre><code class="javascript">var converter = new showdown.Converter(),
+    text      = content_post,
+   html      = converter.makeHtml(text);
+    console.log("MARKDOWN RESULT: " + html);
+</code></pre>]]>
 	</content>
 </post>
 

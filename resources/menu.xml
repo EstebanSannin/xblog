@@ -25,6 +25,12 @@
 </menu>
 
 <menu>
+	<id>MarkdownPage</id>
+	<title>MarkdownPage</title>
+	<url>#MarkdownPage</url>
+</menu>
+
+<menu>
 	<id></id>
 	<title></title>
 	<url></url>

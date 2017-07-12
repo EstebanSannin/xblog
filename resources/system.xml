@@ -3,5 +3,10 @@
 <xblog>
 	<siteName><![CDATA[<h2>xBl0g esteban</h2>]]></siteName>
 	<subTitle><![CDATA[<p>subTitle...</p>]]></subTitle>
+	<homepage>
+## Wellcome to xBl0g
+
+![Alt text](image/wide.jpg =250x250)
+</homepage>
 	<theme>default</theme>
 </xblog>

@@ -4,8 +4,11 @@
 	<siteName>xBl0g</siteName>
 	<subTitle><![CDATA[<p>subTitle...</p>]]></subTitle>
 	<homepage>
+<![CDATA[
 ## *Wellcome to xBl0g*
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet volutpat vestibulum. Donec non mi sit amet quam feugiat porta congue eget quam. Mauris euismod rutrum lorem ut interdum. Cras consequat nisl at sollicitudin aliquam. Aliquam vel augue aliquam, luctus urna sit amet, posuere libero. Integer quis tortor sit amet sem varius scelerisque in sit amet ipsum. Mauris condimentum, neque ut dignissim aliquam, risus felis egestas nisl, vitae feugiat leo sem non sem. Aliquam rutrum porta cursus. Pellentesque accumsan ornare massa, eget posuere felis posuere id. Curabitur luctus velit ut ligula pellentesque elementum. Duis ornare tortor mollis, suscipit est id, suscipit ante. Vivamus sit amet elit leo.
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/dbSAtYwOLUw" frameborder="0" allowfullscreen></iframe>
 
 ### Lua Language Highlight
 
@@ -32,7 +35,7 @@ Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculu
 Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tincidunt dapibus accumsan. Donec sollicitudin molestie efficitur. In id rhoncus eros, pulvinar laoreet massa. Aliquam facilisis justo tempor tellus lobortis, vel varius dolor consectetur. Aenean vitae turpis ac augue fermentum porta. Vestibulum a libero accumsan, dapibus odio quis, tincidunt magna. Cras vulputate nulla libero, id vulputate ex eleifend vitae. Suspendisse aliquam sapien sed nunc iaculis, non bibendum leo scelerisque. Aenean dignissim, neque quis hendrerit bibendum, tellus arcu aliquam eros, id efficitur risus augue at libero. Fusce cursus orci non condimentum commodo. Suspendisse efficitur diam nec mauris volutpat, sed elementum orci aliquet. Aliquam at diam et sem sodales aliquet eget sit amet eros. Phasellus eleifend a justo eu pulvinar.
 
 Praesent mollis nec nunc venenatis interdum. Donec rutrum ligula felis, sit amet viverra leo posuere id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis in consequat enim. Phasellus sed ligula velit. Donec fringilla leo ac odio fringilla, condimentum hendrerit sem luctus. Fusce eleifend malesuada nibh et dictum. Pellentesque ut suscipit erat. Nunc libero purus, blandit ut ex vitae, molestie hendrerit neque. Cras ultrices metus quam, et lacinia turpis fringilla vitae. Morbi ultrices ornare erat, ut dictum nibh tempus non. Proin libero lacus, aliquam sed tortor in, eleifend pharetra elit.
-
+]]>
 </homepage>
 	<theme>default</theme>
 </xblog>

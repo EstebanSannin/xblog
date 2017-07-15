@@ -6,6 +6,12 @@
  *
  ******************************************************************************/
 
+var pathname = window.location.pathname; // Returns path only
+var url      = window.location.href;     // Returns full URL
+
+console.log("[xblog]: pathname = "+pathname);
+console.log("[xblog]: url = "+url);
+
 $(document).ready(function(){
 
 	// System
@@ -18,7 +24,6 @@ $(document).ready(function(){
 			var theme = $(this).find('theme').text();
 			var subTitle = $(this).find('subTitle').text();
 			var homepage_content = $(this).find('homepage').text();
-			console.log("siteName: " + siteName);
 			$("#theme").attr("href", "themes/" + theme + ".css");
 			//$(siteName).appendTo('#header');
 			$(siteName).html('#header');
@@ -27,10 +32,8 @@ $(document).ready(function(){
 			var converter = new showdown.Converter(),
 				text      = homepage_content,
 				html      = converter.makeHtml(text);
-			console.log("Home page content: "+html);
 			$("#textblog").html(html)
 			$('pre code').each(function(i, block) {
-				console.log("highlight");
 				hljs.highlightBlock(block);
 			});
 			$(subTitle).appendTo('#subtitle');
@@ -46,7 +49,6 @@ $(document).ready(function(){
 	$.ajax({ type: "GET", url: "resources/post.xml", dataType: "xml",
 		success: function(xml) {
 			$(xml).find('post').each(function() {
-				console.log("EXECUTE post");
 				var linkID = 'link'+i;
 				var postID = 'post'+i;
 				var data = $(this).find('date').text();
@@ -60,7 +62,6 @@ $(document).ready(function(){
 						text      = content_post,
 						html      = converter.makeHtml(text);
 				} else {
-					console.log("[xblog.js]: Markup: HTML");
 					html = content_post;
 				}
 				var link_markup = '<li>'+data+
@@ -70,7 +71,16 @@ $(document).ready(function(){
 					'"><center><h2>'+title+'</h2>writed: '+data+' - Author: '+author+'</center><br>'+html+
 					'</div>';
 				// Writing item post in list
-				$('#postBlog').append(link_markup);
+				$('#postBlog').append(link_markup);i
+				if(url.indexOf("#"+linkID) !== -1) {
+					console.log("[xblog-post]: LOAD CONTENT: "+linkID);
+					$('#textblog').html(other);
+					$('#textblog').fadeIn(1500);
+					$('pre code').each(function(i, block) {
+						console.log("highlight");
+						hljs.highlightBlock(block);
+					});
+				}
 			
 				$('a#'+linkID).click(function(){
 					console.log("CLICKED: "+linkID);

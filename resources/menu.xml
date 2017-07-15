@@ -8,9 +8,9 @@
 </menu>
 
 <menu>
-	<id>advancedPage</id>
-	<title>advancedPage</title>
-	<url>#advancedPage</url>
+	<id>MarkdownPage</id>
+	<title>MarkdownPage</title>
+	<url>#MarkdownPage</url>
 </menu>
 
 <menu>
@@ -20,15 +20,16 @@
 </menu>
 
 <menu>
+	<id>advancedPage</id>
+	<title>advancedPage</title>
+	<url>#advancedPage</url>
+</menu>
+
+<menu>
 	<title>external-link</title>
 	<url>http://google.com</url>
 </menu>
 
-<menu>
-	<id>MarkdownPage</id>
-	<title>MarkdownPage</title>
-	<url>#MarkdownPage</url>
-</menu>
 
 <menu>
 	<id></id>

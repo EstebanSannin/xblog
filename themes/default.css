@@ -21,9 +21,10 @@ div#footer  {
 	font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
 	font-size: 11px;
 	padding-left: 1px;
-	padding-top: 15px;
+	padding-top: 2px;
+	padding-bottom: 2px;
 	width : 100%;
-	height : 30px;
+	height : 22px;
 	border-top : 1px solid #888;
 	display: inline-block;
 
@@ -33,7 +34,7 @@ div#social  {
 	float: right;
 	width : 20%;
 	left: 94%;
-	height : 30px;
+	height : 22px;
 	padding-left: 1px;
 	padding-top: 1px;
 	display: inline-block;

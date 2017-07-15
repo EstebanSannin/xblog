@@ -74,22 +74,26 @@ $(document).ready(function(){
 				$('#postBlog').append(link_markup);i
 				if(url.indexOf("#"+linkID) !== -1) {
 					console.log("[xblog-post]: LOAD CONTENT: "+linkID);
+					$('#textblog').hide()
 					$('#textblog').html(other);
 					$('#textblog').fadeIn(1500);
 					$('pre code').each(function(i, block) {
 						console.log("highlight");
 						hljs.highlightBlock(block);
 					});
+					$('#textblog').fadeIn(1000);
 				}
 			
 				$('a#'+linkID).click(function(){
 					console.log("CLICKED: "+linkID);
+					$('#textblog').hide()
 					$('#textblog').html(other);
 					$('#textblog').fadeIn(1500);
 					$('pre code').each(function(i, block) {
 						console.log("highlight");
 						hljs.highlightBlock(block);
 					});
+					$('#textblog').fadeIn(1000);
 				})
 				i++;
 			});

@@ -7,6 +7,9 @@
  *
  *******************************************************************************/
 
+var pathname = window.location.pathname; // Returns path only
+var url      = window.location.href;     // Returns full URL
+
 $(document).ready(function(){
 
 	$.ajax({type: "GET", url: "resources/page.xml", dataType: "xml",
@@ -20,8 +23,27 @@ $(document).ready(function(){
 
 		console.log("TAG FROM PAGE: "+tag);
 		console.log("Markup: " + markup);
+
+		if(url.indexOf("#"+tag) !== -1) {
+			console.log("[page]: LOAD CONTENT: "+tag);
+			$('#wrapper').hide();
+			$('#wrapper').html("<h1>"+title+"</h1>");
+			if(markup == "MARKDOWN") {
+				console.log("Converting from MARKDOWN to HTML");
+				var converter = new showdown.Converter(),
+					text      = content,
+					html      = converter.makeHtml(text);
+			} else {
+				html = content;
+			}
+			$('#wrapper').append(html);
+			$('pre code').each(function(i, block) {
+				hljs.highlightBlock(block);
+			});
+			$('#wrapper').fadeIn(1000);
+		}
+
 		$('a#'+tag).click(function(){
-			console.log("CLICKED: "+tag+" Markup: "+markup);
 				$('#wrapper').hide();
 				$('#wrapper').html("<h1>"+title+"</h1>");
 				if(markup == "MARKDOWN") {

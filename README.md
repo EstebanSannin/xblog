@@ -8,7 +8,7 @@
 All the configuration are made in XML. Why this? Because XML is more human readable
 maybe in the future I can made a new version with json format.
 
-```
+```XML
 <xblog>
 	<siteName></siteName>
 	<subTitle></subTitle>
@@ -35,7 +35,7 @@ For add new pages, you need to add new `<page>` object inside:
 
 #### Page example:
 
-```
+```XML
 <page>
 	<tag>mytagpage</tag>
 	<title>My New Page</title>
@@ -49,7 +49,7 @@ the `<tag>` is used also for connecto the page to the menu bar
 
 ### Menu entry Example
 
-```
+```XML
 <menu>
   <id>mytagpage</id>
   <title>NewPage</title>

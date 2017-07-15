@@ -66,9 +66,6 @@ $(document).ready(function(){
 
 				var twitter_button = "<a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-via=\"estebansannin\">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"
 
-
-
-
 				if(markup == "MARKDOWN") {
 					console.log("[xblog.js]: Converting from MARKDOWN to HTML");
 					var converter = new showdown.Converter(),
@@ -82,7 +79,7 @@ $(document).ready(function(){
 					'</a></li>';
 				var other='<br><div class="comment2" id="'+postID+
 					'"><center><h2>'+title+'</h2>writed: '+data+' - Author: '+author+'</center><br>'+html+
-					'</div>'+twitter_button;
+				'</div>'+twitter_button+'<br><br>';
 				// Writing item post in list
 				$('#postBlog').append(link_markup);i
 				if(url.indexOf("#"+linkID) !== -1) {

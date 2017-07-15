@@ -24,7 +24,14 @@ $(document).ready(function(){
 			var theme = $(this).find('theme').text();
 			var subTitle = $(this).find('subTitle').text();
 			var homepage_content = $(this).find('homepage').text();
+			var github_link = $(this).find('github').text();
+			var linkedin_link = $(this).find('linkedin').text();
+			var twitter_link = $(this).find('twitter').text();
 			$("#theme").attr("href", "themes/" + theme + ".css");
+			$("#social-github").attr("href", github_link);
+			$("#social-linkedin").attr("href", linkedin_link);
+			$("#social-twitter").attr("href", twitter_link);
+
 			//$(siteName).appendTo('#header');
 			$(siteName).html('#header');
 			$('#header').html(siteName);

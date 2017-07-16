@@ -52,6 +52,7 @@ $(document).ready(function(){
   // Post Blog Management
 
 	$("<h3>Blog Post:</h3>").appendTo('#postBlog');
+	$('#postBlogOld').hide();
 	var i = 0;
 	$.ajax({ type: "GET", url: "resources/post.xml", dataType: "xml",
 		success: function(xml) {
@@ -67,7 +68,6 @@ $(document).ready(function(){
 				var twitter_button = "<a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-via=\"estebansannin\">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"
 
 				if(markup == "MARKDOWN") {
-					console.log("[xblog.js]: Converting from MARKDOWN to HTML");
 					var converter = new showdown.Converter(),
 						text      = content_post,
 						html      = converter.makeHtml(text);
@@ -80,31 +80,40 @@ $(document).ready(function(){
 				var other='<br><div class="comment2" id="'+postID+
 					'"><center><h2>'+title+'</h2>writed: '+data+' - Author: '+author+'</center><br>'+html+
 				'</div>'+twitter_button+'<br><br>';
-				// Writing item post in list
-				$('#postBlog').append(link_markup);i
+				if(i>34) {
+					console.log("More of 35");
+					$('#postBlogOld').append(link_markup);
+				} else {
+					// Writing item post in list
+					$('#postBlog').append(link_markup);
+				}
+				if(i == 34) {
+					$('#postBlog').append("<br><a href='#' id='old'>Old Post</a><br>")
+				}
 				if(url.indexOf("#"+linkID) !== -1) {
 					console.log("[xblog-post]: LOAD CONTENT: "+linkID);
 					$('#textblog').hide()
 					$('#textblog').html(other);
 					$('#textblog').fadeIn(1500);
 					$('pre code').each(function(i, block) {
-						console.log("highlight");
 						hljs.highlightBlock(block);
 					});
 				}
-			
 				$('a#'+linkID).click(function(){
 					console.log("CLICKED: "+linkID);
 					$('#textblog').hide()
 					$('#textblog').html(other);
 					$('#textblog').fadeIn(1500);
 					$('pre code').each(function(i, block) {
-						console.log("highlight");
 						hljs.highlightBlock(block);
 					});
 					$('#textblog').fadeIn(1000);
-				})
+				});
 				i++;
+			});
+
+			$('#old').click(function(){
+				$('#postBlogOld').slideToggle('fast');
 			});
 		},
 		error: function() { alert("XBlog: Error generating post blog!"); }

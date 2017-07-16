@@ -94,6 +94,12 @@ div#textblog {
 	width: 40%;
 	margin-top: 20px;
 	background-color: #111;
+	margin-bottom: 10px;
+	height: 73%;
+	/*border: 1px solid #888;
+	background-color: #111;*/
+	overflow-y:auto;
+
 }
 
 .comments

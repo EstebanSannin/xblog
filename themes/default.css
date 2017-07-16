@@ -13,6 +13,26 @@ body  {
 	display: inline-block;
 }
 
+.loader {
+	visibility: visible;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -50px;
+	margin-top: -50px;
+	border: 3px solid #f3f3f3; /* Light grey */
+	border-top: 3px solid #800; /* Blue */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
 
 div#footer  {
 	position : absolute;
@@ -171,17 +191,17 @@ div#authorComment {
 	color: #00FF00;
 }
 
-	td.listcell  {
-		font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
-		padding-left : 10px;
-	}
+td.listcell  {
+	font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+	padding-left : 10px;
+}
 
 h2  {
 	font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
 	font-size : 30px;
 	padding : 3px;
 	color: #AA0000;
-	}
+}
 h3  {
 	/*border-style:solid;
 	border-width:1px;

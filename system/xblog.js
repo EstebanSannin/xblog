@@ -116,15 +116,15 @@ var xblog = {
 					var other='<br><div class="comment2" id="'+postID+
 						'"><center><h2>'+title+'</h2>writed: '+data+' - Author: '+author+'</center><br>'+html+
 					'</div>'+twitter_button+'<br><br>';
-					if(i>34) {
-						console.log("More of 35");
+					if(i>25) {
+						console.log("More of 25");
 						$('#postBlogOld').append(link_markup);
 					} else {
 						// Writing item post in list
 						$('#postBlog').append(link_markup);
 					}
-					if(i == 34) {
-						$('#postBlog').append("<br><a href='#' id='old'>Old Post</a><br>")
+					if(i == 25) {
+						$('#postBlog').append("<br><a href='#' id='old'>- Old Posts -</a><br>")
 					}
 					if(url.indexOf("#"+linkID) !== -1) {
 						console.log("[xblog-post]: LOAD CONTENT: "+linkID);
@@ -161,7 +161,6 @@ var everythingLoaded = setInterval(function() {
 		clearInterval(everythingLoaded);
 		// this is the function that gets called when everything is loaded
 		console.log("ALL LOADED");
-//		$("body").fadeIn(1500);
 		$('body').css('visibility', 'visible').hide().fadeIn(1500);
 		$('.loader').css("visibility","hidden");
 	}

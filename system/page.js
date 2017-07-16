@@ -58,10 +58,6 @@ $(document).ready(function(){
 		},
 		error: function() { alert("PAGE Generetor: ERROR!"); }
 		}).done(function() {
-			//$("body").fadeIn(1500);
-			//$('body').css('visibility', 'visible');
-			//$(this).delay(2000);
-			//$('.loader').css("visibility","hidden");
 			console.log("[page]: ajax done");
 		});
 	console.log("[page]: LAST LINE document.ready");

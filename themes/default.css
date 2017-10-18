@@ -85,14 +85,14 @@ div#textblog {
 	width: 56%;
 	margin-right: 10px;
 	margin-left: 10px;
-	padding-left: 10px;
+	padding-left: 20px;
 	padding-right: 10px;
 	margin-top: 20px;
 	margin-bottom: 30px;
 	padding-bottom: 28px;
 	overflow-y:auto;
 	height: 70%;
-	border: 1px solid #888;
+	border-left: 1px solid #888;
 	background-color: #1d1f20;
 }
 #content {

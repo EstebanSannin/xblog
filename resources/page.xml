@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <bblog>
 
+	<page>
+		<tag>blog</tag>
+		<title>Blog</title>
+		<markup>HTML</markup>
+		<content>
+			<![CDATA[
+			<script>
+				xblog.blogLoad();
+				var everythingLoaded2 = setInterval(function() {
+					if (/loaded|complete/.test(document.readyState)) {
+						clearInterval(everythingLoaded2);
+						// this is the function that gets called when everything is loaded
+						console.log("ALL LOADED");
+						$('body').css('visibility', 'visible').hide().fadeIn(1500);
+						$('.loader').css("visibility","hidden");
+					}
+				}, 10);
+			</script>]]>
+		</content>
+	</page>
+
 <page>
 	<tag>advancedPage</tag>
 	<title>Advanced Page</title>
@@ -119,4 +140,3 @@ For insert in to the contet the html code, use <![CDATA[ <b>code</b> ]]>
 -->
 
 </bblog>
-

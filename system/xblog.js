@@ -12,8 +12,6 @@ var url      = window.location.href;     // Returns full URL
 console.log("[xblog]: pathname = "+pathname);
 console.log("[xblog]: url = "+url);
 
-
-
 //Set
 //localStorage.setItem("lastname", "Smith");
 //
@@ -28,48 +26,45 @@ $( document ).ajaxStart(function() {
 	$('body').css('visibility', 'hidden');
 });
 $(document).ready(function(e){
-	// System
-
-	$.ajax({ type: "GET", url: "resources/system.xml", dataType: "xml",
-		success: function(xml) {
-			$(xml).find('xblog').each(function() {
-				var siteName = $(this).find('siteName').text();
-				var theme = $(this).find('theme').text();
-				var subTitle = $(this).find('subTitle').text();
-				var homepage_content = $(this).find('homepage').text();
-				var github_link = $(this).find('github').text();
-				var linkedin_link = $(this).find('linkedin').text();
-				var twitter_link = $(this).find('twitter').text();
-
-				$("#theme").attr("href", "themes/" + theme + ".css");
-				$("#social-github").attr("href", github_link);
-				$("#social-linkedin").attr("href", linkedin_link);
-				$("#social-twitter").attr("href", twitter_link);
-
-				$(siteName).html('#header');
-				$('#header').html(siteName);
-				showdown.parseImgDimension=true;
-				var converter = new showdown.Converter(),
-					text      = homepage_content,
-					html      = converter.makeHtml(text);
-				$("#textblog").html(html)
-				$('pre code').each(function(i, block) {
-					hljs.highlightBlock(block);
-				});
-				$(subTitle).appendTo('#subtitle');
-			});
-		},
-		error: function() { alert("XBlog: Error generating system attributes!"); }
-	});
-
-
-	//loading_menu();
+	xblog.systemLoad();
 	xblog.menuLoad();
-	xblog.blogLoad();
-	console.log("[xblog]: LAST LINE document.ready");
+	//xblog.blogLoad();
 });
 
 var xblog = {
+	systemLoad: function() {
+		$.ajax({ type: "GET", url: "resources/system.xml", dataType: "xml",
+			success: function(xml) {
+				$(xml).find('xblog').each(function() {
+					var siteName = $(this).find('siteName').text();
+					var theme = $(this).find('theme').text();
+					var subTitle = $(this).find('subTitle').text();
+					var homepage_content = $(this).find('homepage').text();
+					var github_link = $(this).find('github').text();
+					var linkedin_link = $(this).find('linkedin').text();
+					var twitter_link = $(this).find('twitter').text();
+
+					$("#theme").attr("href", "themes/" + theme + ".css");
+					$("#social-github").attr("href", github_link);
+					$("#social-linkedin").attr("href", linkedin_link);
+					$("#social-twitter").attr("href", twitter_link);
+
+					$(siteName).html('#header');
+					$('#header').html(siteName);
+					showdown.parseImgDimension=true;
+					var converter = new showdown.Converter(),
+						text      = homepage_content,
+						html      = converter.makeHtml(text);
+					$("#wrapper").html(html)
+					$('pre code').each(function(i, block) {
+						hljs.highlightBlock(block);
+					});
+					$(subTitle).appendTo('#subtitle');
+				});
+			},
+			error: function() { alert("XBlog: Error generating system attributes!"); }
+		});
+	},
 	menuLoad: function() {
 		$.ajax({ type: "GET", url: "resources/menu.xml", dataType: "xml",
 			success: function(xml) {
@@ -87,6 +82,12 @@ var xblog = {
 	},
 
 	blogLoad: function() {
+		if($("#" + "postBlog").length == 0) {
+			//it doesn't exist
+			console.log("TAG #postBlog not exist")
+			var blog_content_tags = "<div id=\"content\">	<ul id=\"postBlog\"></ul>	<ul id=\"postBlogOld\"></ul></div><div id=\"textblog\">"
+			$('#wrapper').append(blog_content_tags);
+		}
 		$("<h3>Blog Post:</h3>").appendTo('#postBlog');
 		$('#postBlogOld').hide();
 		var i = 0;
@@ -100,8 +101,8 @@ var xblog = {
 					var author = $(this).find('author').text();
 					var content_post = $(this).find('content').text();
 					var markup = $(this).find('markup').text();
-
-					var twitter_button = "<a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-via=\"estebansannin\">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"
+					// Disabled sharing on Tweeter
+					var twitter_button = "SHARE on <a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-via=\"estebansannin\">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"
 
 					if(markup == "MARKDOWN") {
 						var converter = new showdown.Converter(),
@@ -115,7 +116,7 @@ var xblog = {
 						'</a></li>';
 					var other='<br><div class="comment2" id="'+postID+
 						'"><center><h2>'+title+'</h2>writed: '+data+' - Author: '+author+'</center><br>'+html+
-					'</div>'+twitter_button+'<br><br>';
+					'</div><br><br>';
 					if(i>25) {
 						console.log("More of 25");
 						$('#postBlogOld').append(link_markup);

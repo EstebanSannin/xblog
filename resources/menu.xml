@@ -8,6 +8,12 @@
 </menu>
 
 <menu>
+	<id>blog</id>
+	<title>blog</title>
+	<url>#blog</url>
+</menu>
+
+<menu>
 	<id>MarkdownPage</id>
 	<title>MarkdownPage</title>
 	<url>#MarkdownPage</url>
@@ -38,4 +44,3 @@
 </menu>
 
 </bblog>
-

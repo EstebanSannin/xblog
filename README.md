@@ -1,63 +1,73 @@
-
 # xBl0g
 
-*XBl0g*: Fast, Simple, minimal Nerd BLOG :-)
+A fast, minimal "nerd" blog. Static files only — **no build step, no backend, no
+framework**. `index.html` loads a few small vanilla ES modules that render your
+**Markdown** on the client. `marked` and `highlight.js` are vendored in `vendor/`,
+so nothing is fetched from a CDN.
 
-### System configuration
+## Run
 
-All the configuration are made in XML. Why this? Because XML is more human readable
-maybe in the future I can made a new version with json format.
+Serve the folder over HTTP (browser `fetch` doesn't work from `file://`):
 
-```XML
-<xblog>
-	<siteName></siteName>
-	<subTitle></subTitle>
-	<homepage></homepage>
-	<theme>default</theme>
-</xblog>
+```bash
+python3 -m http.server 8099
+# open http://localhost:8099
 ```
 
-`<siteName>` TAG is for the web site name
+Deploy by copying the folder to any static host (GitHub Pages, Netlify, nginx, …).
 
-`<subTitle>` TAG is for the subtitle of the web site
+## Add a post
 
-`<homepage>` TAG you can write here the content of your home page
+1. Create `content/posts/2026-01-15-my-post.md`:
 
-`<theme>` TAG is for change the web site style
+   ```text
+   ---
+   title: My Post
+   date: 2026-01-15
+   author: you
+   slug: my-post
+   ---
 
+   Write in **Markdown**. Code blocks get syntax highlighting.
+   ```
 
-### Add new simple page (Markdown) 
+2. Add its path to the `posts` list in `content/site.json` (newest first).
 
-For add new pages, you need to add new `<page>` object inside: 
+Pages work the same way in `content/pages/`. No rebuild — edit and reload.
 
-    resources/page.xml
+## Configure
 
+Everything lives in `content/site.json`: `siteName`, `subtitle`, `social` links,
+the `menu`, and the `posts` / `pages` lists. A menu item with `"route"` is an
+internal link (`#/blog`, `#/page/about`); one with `"url"` is external.
 
-#### Page example:
+## Themes
 
-```XML
-<page>
-	<tag>mytagpage</tag>
-	<title>My New Page</title>
-	<markup>MARKDOWN</markup>
-	<content></content>
-</page>
+Colors are CSS variables, so a theme is just a token block in `css/theme.css`:
 
+```css
+:root[data-theme="clear"] { --bg: #f7f7f4; --fg: #1b1b1b; --menu: #aa0000; /* … */ }
 ```
 
-the `<tag>` is used also for connecto the page to the menu bar
+List a theme in `"themes"` in `site.json` and it appears in the footer switcher
+(the choice is remembered). `"theme"` sets the default.
 
-### Menu entry Example
+## Layout
 
-```XML
-<menu>
-  <id>mytagpage</id>
-  <title>NewPage</title>
-  <url></url>
-</menu>
+```
+index.html          shell: header, menu, content, footer
+css/theme.css       responsive theme(s), CSS variables
+js/app.js           entry point, router, theme switch
+js/content.js       loads site.json + Markdown
+js/markdown.js      frontmatter + marked + highlight.js
+js/views.js         renders home / blog / post / page
+content/            site.json and your .md files
+vendor/             marked + highlight.js (no CDN)
+legacy/             original jQuery + XML version, for reference
 ```
 
-XBlog use "showdownjs" library for covert Markdown to HTML. 
-For more information follow this [link] [showdownjs-wiki]
+Routes: `#/` home · `#/blog` post list · `#/post/<slug>` a post · `#/page/<slug>` a page.
 
-[showdownjs-wiki]: https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax
+---
+
+xBl0g 1.0.0 · by Stefano Viola (estebanSannin), 2011 — modernized 2026.

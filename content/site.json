@@ -1,0 +1,28 @@
+{
+  "siteName": "xBl0g",
+  "subtitle": "Fast, Simple, minimal Nerd BLOG :-)",
+  "author": "Stefano Viola (estebanSannin)",
+  "version": "1.0.0",
+  "theme": "default",
+  "themes": ["default", "clear"],
+  "social": {
+    "github": "https://github.com/EstebanSannin",
+    "linkedin": "https://www.linkedin.com/in/estebansannin/",
+    "mastodon": ""
+  },
+  "menu": [
+    { "title": "home", "route": "#/" },
+    { "title": "blog", "route": "#/blog" },
+    { "title": "about", "route": "#/page/about" },
+    { "title": "markdown", "route": "#/page/markdown-syntax" }
+  ],
+  "home": "home.md",
+  "posts": [
+    "posts/2011-11-03-lorem-ipsum-1.md",
+    "posts/2011-11-01-primo-post-xblog.md"
+  ],
+  "pages": [
+    "pages/about.md",
+    "pages/markdown-syntax.md"
+  ]
+}

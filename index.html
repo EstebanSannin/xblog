@@ -1,43 +1,39 @@
-<html>
-	<head>
-		<title>XBl0g</title>
-		<link id="theme" rel='stylesheet' href='themes/default.css' type='text/css'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="xBl0g — fast, simple, minimal nerd blog. Static, no build step, no backend.">
+  <title>xBl0g</title>
 
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.1/showdown.min.js"></script>
-		<script type="text/javascript" src="system/xblog.js"></script>
-		<script type="text/javascript" src="system/page.js"></script>
-		<meta name="description" content="XBLOG symple CMS" />
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	</head>
-	<body>
-		<div id="loader" class="loader"></div>
-		<script>hljs.initHighlightingOnLoad();</script>
-		<div id="header"></div>
-		<div id="subtitle"></div>
-		<div id="topbar">
-			<table border="0"><tr id="menuBar"></tr></table>
-		</div>
-		<div id="wrapper">
-			<div id="content">
-				<ul id="postBlog"></ul>
-				<ul id="postBlogOld"></ul>
-			</div>
-			<div id="textblog">
-				<center><h2>Wellcome on xbl0g</h2></center>
-			</div>
-		</div>
-		<div id='footer'>
-			<font color=red>XBl0g 0.2.0</font> by <font color=yellow><a href='http://esteban.homelinux.org'>Stefano Viola (estebanSannin)</a></font>
-			<div id="social">
-				<a id="social-github"><img src="image/gray.ico" style="width:20px;height:20px;"></img></a>
-				<a id="social-linkedin"><img src="image/linkedin-icon.png" style="width:20px;height:20px;"></img></a>
-				<a id="social-twitter"><img src="image/twitter-icon.png" style="width:20px;height:20px;"></img></a>
-			</div>
-		</div>
-	</body>
+  <link rel="icon" href="image/gray.ico">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="vendor/highlight-monokai-sublime.css">
+
+  <!-- highlight.js exposes a global `hljs`; the ES modules call it after render. -->
+  <script src="vendor/highlight.min.js" defer></script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body class="loading">
+  <div id="loader" class="loader" aria-hidden="true"></div>
+
+  <header id="site-header">
+    <h1 id="site-title"></h1>
+    <p id="subtitle"></p>
+  </header>
+
+  <nav id="topbar" aria-label="Main">
+    <ul id="menu"></ul>
+  </nav>
+
+  <main id="content" class="prose"></main>
+
+  <footer id="footer">
+    <span id="footer-meta"></span>
+    <span id="footer-right">
+      <span id="theme-switch"></span>
+      <span id="social"></span>
+    </span>
+  </footer>
+</body>
 </html>
-

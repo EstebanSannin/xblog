@@ -1,0 +1,255 @@
+/* xBl0g — "default" theme.
+   A modern, responsive take on the original dark terminal look:
+   red menu + accents, monospace. CSS variables so a new theme (e.g. a green
+   one) is just a handful of colour swaps. */
+
+:root {
+  --bg:        #1d1f20;
+  --bg-alt:    #17191a;
+  --panel:     #333;
+  --fg:        #dddddd;
+  --muted:     #8a8a8a;
+  --accent:    #aa0000;   /* headings / rules */
+  --accent-2:  #800000;   /* hover underline */
+  --menu:      #aa0000;   /* menu + social — matches the heading red */
+  --menu-hi:   #d13438;   /* menu hover / active — brighter red */
+  --link:      #9aa0a6;
+  --border:    #444;
+  --hover-bg:  rgba(0, 0, 0, 0.35);  /* menu hover/active background */
+  --footer-bg: #111111;
+  --radius:    6px;
+  --mono: 'Lucida Console', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+  --measure: 44rem;
+}
+
+/* "clear" — a light theme that keeps the red identity.
+   Only colour tokens change; all layout is shared from the rules below. */
+:root[data-theme="clear"] {
+  --bg:        #f7f7f4;
+  --bg-alt:    #ececea;
+  --panel:     #e7e7e3;
+  --fg:        #1b1b1b;
+  --muted:     #666666;
+  --accent:    #aa0000;
+  --accent-2:  #800000;
+  --menu:      #aa0000;
+  --menu-hi:   #d13438;
+  --link:      #333333;
+  --border:    #cccccc;
+  --hover-bg:  rgba(170, 0, 0, 0.10);
+  --footer-bg: #e7e7e3;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0 1rem 4rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 16px;
+  line-height: 1.6;
+  /* fade in once app.js finishes booting */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+body.ready { opacity: 1; }
+
+/* ---- loader ---- */
+.loader {
+  position: fixed;
+  top: 50%; left: 50%;
+  width: 90px; height: 90px;
+  margin: -45px 0 0 -45px;
+  border: 3px solid #f3f3f3;
+  border-top-color: var(--accent-2);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 100;
+}
+body:not(.loading) .loader { display: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---- header ---- */
+#site-header {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.25rem 0 0.5rem;
+  border-bottom: 1px solid var(--accent-2);
+}
+#site-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  color: var(--fg);
+  letter-spacing: 1px;
+}
+#subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+/* ---- menu ---- */
+#topbar {
+  max-width: 72rem;
+  margin: 0.75rem auto;
+}
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  margin: 0;
+  padding: 0.4rem 0.75rem;
+  list-style: none;
+  background: var(--panel);
+  border-radius: var(--radius);
+}
+#menu a {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  color: var(--menu);
+  text-decoration: none;
+  border-radius: 4px;
+}
+#menu a:hover,
+#menu a.active {
+  background: var(--hover-bg);
+  color: var(--menu-hi);
+}
+
+/* ---- content ---- */
+#content {
+  max-width: 72rem;
+  margin: 1.5rem auto;
+  min-height: 50vh;
+}
+.prose { max-width: var(--measure); }
+.prose.full,
+article.prose { max-width: var(--measure); }
+
+h1, h2, h3, h4 { color: var(--accent); line-height: 1.25; }
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { border-bottom: 1px solid var(--accent-2); }
+
+hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+img { max-width: 100%; height: auto; }
+
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 1rem;
+  border-left: 3px solid var(--accent-2);
+  color: var(--muted);
+}
+
+/* inline + block code */
+code {
+  font-family: var(--mono);
+  background: var(--bg-alt);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+pre {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+pre code { background: none; padding: 0; }
+
+/* tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  overflow-x: auto;
+  display: block;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+}
+th { background: var(--bg-alt); color: var(--fg); }
+
+/* responsive video embeds */
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin: 1.25rem 0;
+}
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--radius);
+}
+
+/* ---- blog list ---- */
+.post-list { list-style: none; padding: 0; }
+.post-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted var(--border);
+}
+.post-list time {
+  color: var(--muted);
+  margin-right: 0.75rem;
+  font-size: 0.85em;
+}
+.post-meta { color: var(--muted); margin-top: -0.5rem; }
+.back { margin-top: 2rem; }
+.error { color: var(--accent); }
+
+/* ---- footer ---- */
+#footer {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+#footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+#social a { color: var(--menu); margin-left: 0.75rem; }
+
+#theme-switch button {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.25rem;
+  cursor: pointer;
+}
+#theme-switch button:hover { color: var(--menu-hi); border-color: var(--menu-hi); }
+#theme-switch button.active {
+  color: var(--menu);
+  border-color: var(--menu);
+}
+
+/* ---- small screens ---- */
+@media (max-width: 640px) {
+  body { padding-bottom: 5rem; }
+  #footer { position: static; margin-top: 2rem; }
+}
